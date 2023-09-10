@@ -1,0 +1,25 @@
+@use "./colors" as c;
+@use "../utils" as u;
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+h1 {
+  color: c.$text-light;
+  font-weight: 700;
+  font-size: clamp(u.rem(20), 1rem + 2.5vw, u.rem(33));
+}
+
+h2,
+h3 {
+  color: c.$text-gray;
+  font-size: clamp(u.rem(10), 1rem + 1vw, u.rem(14));
+}
+
+p {
+  font-size: clamp(u.rem(12), 1rem + 1.3vw, u.rem(18));
+  color: c.$text-dark;
+}
