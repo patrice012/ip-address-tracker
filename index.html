@@ -29,33 +29,35 @@
       <div class="container">
         <div class="tracker__container">
           <h1>IP Address Tracker</h1>
-          <form class="input__container">
+          <form id="form" class="input__container">
             <input
               type="text"
               name="ip_input"
               id="ip_input"
               placeholder="Search for any IP Address or domain"
             />
-            <button id="btn" role="button"><img src="./images/icon-arrow.svg" /></button>
+            <button id="btn" role="button">
+              <img src="./images/icon-arrow.svg" />
+            </button>
           </form>
           <section class="result">
             <div class="result__container">
-                          <div class="item">
-              <h3>IP ADDRESS</h3>
-              <p class="ip-address">192.124.66.01</p>
-            </div>
-            <div class="item">
-              <h3>LOCATION</h3>
-              <p class="ip-location">Brookly NY</p>
-            </div>
-            <div class="item">
-              <h3>TIME ZONE</h3>
-              <p class="ip-timezone">UTC -05:00</p>
-            </div>
-            <div class="item">
-              <h3>ISP</h3>
-              <p class="ip-isp">SpaceX Starlink</p>
-            </div>
+              <div class="item">
+                <h3>IP ADDRESS</h3>
+                <p class="ip-address">192.124.66.01</p>
+              </div>
+              <div class="item">
+                <h3>LOCATION</h3>
+                <p class="ip-location">Brookly NY</p>
+              </div>
+              <div class="item">
+                <h3>TIME ZONE</h3>
+                <p class="ip-timezone">UTC -05:00</p>
+              </div>
+              <div class="item">
+                <h3>ISP</h3>
+                <p class="ip-isp">SpaceX Starlink</p>
+              </div>
             </div>
           </section>
         </div>
@@ -65,6 +67,4 @@
   </body>
   <script src="./js/leaflet.js"></script>
   <!-- <script type="module" src="./js/tet.js"></script> -->
-
-  
 </html>
