@@ -8,12 +8,12 @@ $breakpoints-up: (
 );
 
 // 452.98px (flex), 617.98 (grid), 699.98px, 899.98px, 1339.98px
-// $breakpoints-down: (
-//   'xsmall': f.em(617.98),
-//   'small': f.em(699.98),
-//   'medium': f.em(899.98),
-//   'large': f.em(1339.98),
-// );
+$breakpoints-down: (
+  'xsmall': f.em(617.98),
+  'small': f.em(699.98),
+  'medium': f.em(899.98),
+  'large': f.em(1339.98),
+);
 
 @mixin breakpoint($size){
     @media screen and (min-width: map-get($breakpoints-up, $size)) {

@@ -27,7 +27,7 @@
   <body>
     <main>
       <div class="container">
-        <div class="tracker__container">
+        <div class="tracker__container full_size">
           <h1>IP Address Tracker</h1>
           <form id="form" class="input__container">
             <input
@@ -62,7 +62,10 @@
           </section>
         </div>
       </div>
-      <div id="map"></div>
+      <div class="error full_size">
+        <p class="error--msg">error</p>
+      </div>
+      <div id="map" class="full_size"></div>
     </main>
   </body>
   <script src="./js/leaflet.js"></script>

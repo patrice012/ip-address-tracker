@@ -6,6 +6,8 @@ const ip_address = document.querySelector(".ip-address");
 const region = document.querySelector(".ip-location");
 const timezone = document.querySelector(".ip-timezone");
 const isp = document.querySelector(".ip-isp");
+const err = document.querySelector(".error");
+const err_msg = document.querySelector(".error--msg");
 let lat;
 let lng;
 
@@ -50,17 +52,33 @@ const getUrl = (data) => {
 };
 
 function removeSkeleton() {
+  ip_address.classList.remove("skeleton");
+  region.classList.remove("skeleton");
+  timezone.classList.remove("skeleton");
+  isp.classList.remove("skeleton");
+}
+
+function addSkeleton() {
   ip_address.classList.add("skeleton");
   region.classList.add("skeleton");
   timezone.classList.add("skeleton");
   isp.classList.add("skeleton");
+  ip_address.textContent = "";
+  region.textContent = "";
+  isp.textContent = "";
+  timezone.textContent = "";
 }
 
-function addSkeleton() {
-    ip_address.classList.add("skeleton");
-    region.classList.add("skeleton");
-    timezone.classList.add("skeleton");
-    isp.classList.add("skeleton");
+function delayRemove(html_element) {
+  setTimeout(() => {
+    html_element.style.display = "None";
+  }, 5000);
+}
+
+function toggleError(msg = "") {
+  err.style.display = "grid";
+  err_msg.textContent = `${msg}`;
+  delayRemove(err);
 }
 
 addSkeleton();
@@ -69,8 +87,10 @@ async function getData(input_data = null) {
   const URL = getUrl(input_data);
   const response = await fetch(URL);
   const data = await response.json();
-  console.log(data, "result data");
 
+  if (!response.ok) {
+    toggleError((msg = `${input_data} not found`));
+  }
   if ("as" in data) {
     removeSkeleton();
 
@@ -93,15 +113,15 @@ async function getData(input_data = null) {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-
   const formData = new FormData(event.currentTarget);
   const ip_input = formData.get("ip_input");
+  document.getElementById("form").reset();
 
-  getData(ip_input);
+  getData(ip_input).catch((err) => toggleError(err));
 });
 
 if (_geolocation(lat, lng)) {
-  getData("").then(() => {
-    initMap();
-  });
+  getData("")
+    .then(() => initMap())
+    .catch((err) => toggleError(err));
 }

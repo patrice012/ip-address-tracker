@@ -15,11 +15,16 @@ body {
   background-image: url("../../images/pattern-bg-mobile.png");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 18rem;
 
   @include u.breakpoint(medium) {
     background-image: url("../../images/pattern-bg-desktop.png");
     height: 15rem;
   }
+}
+
+.full_size {
+  max-width: 1280px;
 }
 
 .tracker__container {
@@ -102,7 +107,7 @@ body {
 
     &:not(:first-child) {
       @include u.breakpoint(medium) {
-        border-left: 1px solid black;
+        border-left: 1px solid g.$text-gray;
       }
     }
 
@@ -112,6 +117,10 @@ body {
       @include u.breakpoint(medium) {
         margin-bottom: 0.7rem;
       }
+    }
+
+    & p {
+      transition: all 0.3s ease;
     }
   }
 }
@@ -123,14 +132,13 @@ body {
   min-height: calc(100vh - 15rem);
 }
 
-
 .skeleton {
   display: inline-block;
   width: 90%;
   height: 70%;
   position: relative;
   overflow: hidden;
-  background-color: #DDDBDD;
+  background-color: #dddbdd;
 
   &::after {
     position: absolute;
@@ -146,13 +154,41 @@ body {
       rgba(#fff, 0.5) 60%,
       rgba(#fff, 0)
     );
-    animation: shimmer 5s infinite;
-    content: '';
+    animation: loading 5s infinite;
+    content: "";
   }
 
-  @keyframes shimmer {
+  @keyframes loading {
     100% {
       transform: translateX(100%);
     }
   }
+}
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  // @include u.breakpoint(medium) {
+  //   transform: translate(-50%, -80%);
+  //   // height: ;
+  // }
+  z-index: 7;
+  width: min(80vw, 800px);
+  height: clamp(5%, 4% + 4vw, 11%);
+  display: none;
+  place-items: center;
+  background-color: yellowgreen;
+}
+
+.error--msg {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 1.1rem;
+  // filter: opacity(22%);
+  border: 1px solid red;
 }
