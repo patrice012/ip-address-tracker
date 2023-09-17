@@ -15,11 +15,13 @@ h1 {
 
 h2,
 h3 {
-  color: c.$text-gray;
+  color: c.$dark-gray;
   font-size: clamp(u.rem(10), 1rem + 1vw, u.rem(14));
+  font-weight: 500;
 }
 
 p {
   font-size: clamp(u.rem(12), 1rem + 1.3vw, u.rem(18));
-  color: c.$text-dark;
+  color: c.$very-dark-gray;
+  font-weight: 400;
 }

@@ -51,17 +51,18 @@ body {
     border: none;
     outline: none;
     height: u.em(47);
-    color: g.$text-dark;
-    font-weight: 600;
+    color: g.$dark-gray;
+    font-weight: 500;
+    line-height: 2rem;
     border-radius: 0.625rem 0 0 0.625rem;
     padding-inline: u.rem(15);
-    font-size: 16px;
+    font-size: u.rem(16);
   }
 
   & button {
     height: u.rem(49);
     width: 15%;
-    background-color: g.$text-dark;
+    background-color: g.$very-dark-gray;
     border-radius: 0 0.625rem 0.625rem 0;
     cursor: pointer;
     transform: all 0.3s ease-in;
@@ -107,7 +108,7 @@ body {
 
     &:not(:first-child) {
       @include u.breakpoint(medium) {
-        border-left: 1px solid g.$text-gray;
+        border-left: 1px solid g.$dark-gray;
       }
     }
 
