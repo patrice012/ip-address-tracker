@@ -17,7 +17,7 @@ body {
   background-size: cover;
   height: 18rem;
 
-  @include u.breakpoint(medium) {
+  @include u.breakpoint(small) {
     background-image: url("../../images/pattern-bg-desktop.png");
     height: 15rem;
   }
@@ -97,7 +97,7 @@ body {
     row-gap: 2rem;
     flex-direction: column;
 
-    @include u.breakpoint(medium) {
+    @include u.breakpoint(large) {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
     }
@@ -107,7 +107,7 @@ body {
     text-align: center;
 
     &:not(:first-child) {
-      @include u.breakpoint(medium) {
+      @include u.breakpoint(large) {
         border-left: 1px solid g.$dark-gray;
       }
     }
@@ -115,13 +115,14 @@ body {
     & h3 {
       margin-bottom: 1rem;
 
-      @include u.breakpoint(medium) {
+      @include u.breakpoint(large) {
         margin-bottom: 0.7rem;
       }
     }
 
     & p {
       transition: all 0.3s ease;
+      line-height: 1.7rem;
     }
   }
 }

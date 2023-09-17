@@ -2,8 +2,9 @@
 
 // 375px, 500px, 700px, 900px, 1440px
 $breakpoints-up: (
-  'medium': f.em(375),
-  'large': f.em(900),
+  'small': f.em(375),
+  'medium': f.em(500),
+  'large': f.em(750),
   'xlarge': f.em(1440),
 );
 

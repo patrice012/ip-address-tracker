@@ -152,7 +152,7 @@ body {
   row-gap: 2rem;
   flex-direction: column;
 }
-@media screen and (min-width: 23.4375em) {
+@media screen and (min-width: 46.875em) {
   .result__container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -161,7 +161,7 @@ body {
 .result .item {
   text-align: center;
 }
-@media screen and (min-width: 23.4375em) {
+@media screen and (min-width: 46.875em) {
   .result .item:not(:first-child) {
     border-left: 1px solid hsl(0, 0%, 59%);
   }
@@ -169,13 +169,14 @@ body {
 .result .item h3 {
   margin-bottom: 1rem;
 }
-@media screen and (min-width: 23.4375em) {
+@media screen and (min-width: 46.875em) {
   .result .item h3 {
     margin-bottom: 0.7rem;
   }
 }
 .result .item p {
   transition: all 0.3s ease;
+  line-height: 1.7rem;
 }
 
 #map {
